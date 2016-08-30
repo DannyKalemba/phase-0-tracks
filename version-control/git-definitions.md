@@ -17,3 +17,5 @@ Commit is a save point for your files. A good commit message is one that explain
 * What is a merge conflict?
 
 A merge conflict is when your current branch and branch you want to merge into have diverged. If you have commits in one branch that are not in the other you can get a merge conflict. For example if two people changed the same line in the same file where one person deleted it and the other decided to modify it you can get a merge conflict.
+
+Release 2: Tag Your Teacher
