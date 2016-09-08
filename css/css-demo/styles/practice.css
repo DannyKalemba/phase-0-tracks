@@ -13,3 +13,11 @@ section#contact-info p{
 .list{
   font-size: .8em;
 }
+
+p::first-line{
+  color: blue;
+}
+
+section > section{
+  color: green;
+}
