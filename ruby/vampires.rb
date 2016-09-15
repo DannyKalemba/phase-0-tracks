@@ -33,33 +33,42 @@ while employee_total > 0 do
     health_insurance = false
   end
 
-  vampire_test = 0
-
-  if age_test && (garlic_bread || health_insurance)
-    vampire_test = 1
-  elsif !age_test && ( !garlic_bread || !health_insurance)
-    vampire_test = 2
+  allergy = nil
+  puts "Name all your allergies. Type done when complete:"
+  until allergy == "done" || allergy == "sunshine"
+    allergy = gets.chomp
   end
+  if allergy == "sunshine"
+    puts "Probably a vampire."
+  else
+    vampire_test = 0
 
-  if !age_test && !garlic_bread && !health_insurance
-    vampire_test = 3
+    if age_test && (garlic_bread || health_insurance)
+      vampire_test = 1
+    elsif !age_test && ( !garlic_bread || !health_insurance)
+      vampire_test = 2
+    end
+
+    if !age_test && !garlic_bread && !health_insurance
+      vampire_test = 3
+    end
+
+    if name == "Drake Cula" || name == "Tu Fang"
+      vampire_test = 4
+    end
+
+    case vampire_test
+      when 1
+        puts "Probably not a vampire."
+      when 2
+        puts "Probably a vampire."
+      when 3
+        puts "Almost certainly a vampire."
+      when 4
+        puts "Definitely a vampire."
+      else 
+        puts "Results inconclusive."
+    end
   end
-
-  if name == "Drake Cula" || name == "Tu Fang"
-    vampire_test = 4
-  end
-
-  if vampire_test == 1 
-    puts "Probably not a vampire"
-  elsif vampire_test == 2
-    puts "Probably a vampire"
-  elsif vampire_test == 3
-    puts "Almost certainly a vampire"
-  elsif vampire_test == 4
-    puts "Definitely a vampire"
-  else 
-    puts "Results inconclusive"
-  end
-
   employee_total -=1
 end 
