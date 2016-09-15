@@ -72,3 +72,5 @@ while employee_total > 0 do
   end
   employee_total -=1
 end 
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
