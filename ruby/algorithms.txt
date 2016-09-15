@@ -1,0 +1,32 @@
+Elevator
+-Check current floor
+-Check destination floor
+  -If destination floor greater than current floor
+    -Press up arrow
+  -Else press down arrow
+-Wait for elevator door to open
+-Step into elevator when door opens
+-Find elevator control panel
+-Press destination floor number
+-Wait for elevator doors to open
+-Step out on destination floor
+
+Breakfast Cereal
+-Open cabinet door
+-Grab bowl for cereal
+-Place bowl on counter
+-Grab cereal box
+-Open cereal box
+-Until bowl is full of cereal
+  -Pour cereal into bowl
+-Open refrigerator
+-Grab Milk
+-Until bowl is full of milk
+  -Pour Milk into bowl
+-Open drawer
+-Grab Spoon
+-Take bowl and spoon to table
+-Place bowl on table
+-Sit in chair
+-Until bowl is empty
+  -Eat cereal with spoon
