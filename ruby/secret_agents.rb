@@ -10,6 +10,8 @@ def encrypt(encrypt_input)
   while index_encrypt < encrypt_input.length
     if encrypt_input[index_encrypt] == "z"
       encrypt_output[index_encrypt] = "a"
+    elsif encrypt_input[index_encrypt] ==  " "
+      encrypt_output[index_encrypt] = " "
     else
       encrypt_output[index_encrypt] = encrypt_input[index_encrypt].next
     end
