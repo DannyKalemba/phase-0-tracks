@@ -3,7 +3,6 @@
 #-advance every letter of string one letter forward
 #-Any space character will remain a space character 
 
-
 def encrypt(encrypt_input)
   index_encrypt = 0
   encrypt_output = ""
@@ -38,12 +37,10 @@ def decrypt(decrypt_input)
   return decrypt_output
 end
 
-
 #User interface
 #-Add questions for users
 #-Get input from users
 #-Add if statement based on user input
-#-
 
 puts "Would you like to decrypt or encrypt a password?"
 input = gets.chomp
@@ -54,9 +51,6 @@ if input == "encrypt"
 else
   puts decrypt(password)
 end
-
-
-
 
 #puts encrypt("abc") 
 #puts encrypt("zed") 
