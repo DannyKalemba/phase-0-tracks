@@ -3,7 +3,7 @@
 Highway = {
   north_bound:{
     cars: {
-      porsche:["Bob Smith", "Joe Smith"],
+      Porsche:["Bob Smith", "Joe Smith"],
       Audi:["John Doe", "Jane Doe", "Baby Doe"],
       Ferrari:["Jake"]
     },
@@ -15,7 +15,7 @@ Highway = {
   },
   south_bound:{
     cars:{
-      bmw:["Jack", "Danny", "Jimmy"],
+      BMW:["Jack", "Danny", "Jimmy"],
       Bugatti:['Bill'],
       Jeep:['Sam', 'Fred'],
       Dodge:['Justin', 'Gina'],
@@ -25,11 +25,9 @@ Highway = {
       UPS:['Ben'],
       Fedex:['Matt'],
       Semi:['Kevin']
-
       }
     }
   }
-
 
 
 puts Highway[:north_bound][:cars][:porsche][0]
