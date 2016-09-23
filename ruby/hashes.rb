@@ -1,17 +1,20 @@
 #-Hashes
 #-create hash 
 #-user input info
-#-print info hash to screen
+#-change values to correct data type
+#-print client info to screen
 #-ask user if they want to update info
 #-change hash value
 
-
 client_information = {}
 
-# {name: "", age: 0, childern: 0, decor_theme: ""}
-
-def update_hash(update_key)
-  key
+def married_method(hash)
+  if hash[:married] == "y"
+    hash[:married] = true
+  else
+    hash[:married] = false
+  end
+  hash
 end
 
 puts "Enter client name:"
@@ -24,16 +27,25 @@ puts "How many children does the client have?"
   client_information[:children] = gets.chomp.to_i
 puts "What is the decor_theme?"
   client_information[:decor_theme] = gets.chomp
-if client_information[:married] == "y"
-  client_information[:married] = true
-else
-  client_information[:married] = false
-end
+married_method(client_information)
+
 puts client_information
 
 puts "Enter in the client information you would like to update:"
-  if gets.chomp == "none"
-    puts client_information  
+ update = gets.chomp
+  if update == "none"  
   else
-    update_hash(gets.chomp)
+    puts "Enter in a new value for #{update}:"
+    update = update.to_sym
+    input = gets.chomp
+    if update == :age
+      client_information[update] = input.to_i
+    elsif update == :children
+      client_information[update] = input.to_i
+    elsif update == :married
+      married_method(client_information)
+    else
+      client_information[update] = input
+    end
   end
+puts client_information 
