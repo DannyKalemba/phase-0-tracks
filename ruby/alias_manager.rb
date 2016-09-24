@@ -2,11 +2,9 @@
 #-Swap first and last name
 #-change all of the vowels to the next vowel
 #-change all the consonants to the next consonant
-#-
-#
-#
-#
-
+#-return fake name
+#-Create a ui for the user to input more than one name
+#-out all the names the user input
 
 def next_vowel(letter)
   vowels = ['a','e','i','o','u']
@@ -81,7 +79,6 @@ def output(full_list)
     index += 2
   end
 end
-
 
 ui
 
