@@ -55,7 +55,25 @@ def fake_name(name)
   return swap_names(name)
 end
 
+def ui
+  exit = false
+  until exit == true
+    puts "Enter in a first and last name to get an alias (quit to exit):"
+    name = gets.chomp
+    if name == 'quit'
+      exit = true
+    else
+      puts fake_name(name)
+    end
+  end
+end
 
+def storage()
+
+end
+
+
+ui
 p next_consonant('z')
 p next_vowel('a')
 p swap_names("Danny Kalemba")
