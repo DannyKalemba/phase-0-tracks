@@ -7,6 +7,7 @@
 #
 #
 
+
 def next_vowel(letter)
   vowels = ['a','e','i','o','u']
   index = vowels.rindex(letter)
@@ -56,6 +57,7 @@ def fake_name(name)
 end
 
 def ui
+  list_names = []
   exit = false
   until exit == true
     puts "Enter in a first and last name to get an alias (quit to exit):"
@@ -63,22 +65,25 @@ def ui
     if name == 'quit'
       exit = true
     else
+      list_names << name
+      list_names << fake_name(name)
       puts fake_name(name)
     end
   end
+  output(list_names)
 end
 
-def storage()
-
+def output(full_list)
+  index = 0
+  puts "Here is a list of all of the names you have entered:"
+  while index < full_list.length
+    puts "#{full_list[index]} is also known as #{full_list[index+1]}"
+    index += 2
+  end
 end
 
 
 ui
-p next_consonant('z')
-p next_vowel('a')
-p swap_names("Danny Kalemba")
-
-p fake_name('Felicia Torres')
 
 
 
