@@ -12,4 +12,5 @@
 #Jump
 #Tricks
 
-
+class Puppy
+end
