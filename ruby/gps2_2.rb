@@ -80,10 +80,10 @@ remove_item("Lemonade", list)
 update_item("Ice Cream", 1, list)
 print_list(list)
 
-#
-#
-#
-#
-#
-#
-
+#Reflect
+#I learned that pseudocode is very important to mapping out what you are going to be doing in your code. It really helps to organize the whole process 
+#The trade-offs are that a hashes is able to store items with different names easily so you can tell what is on your list But it makes it harder to put all the values into a hash
+#A method returns the last line 
+#You can pass anything into a method as an argument
+#You can call methods from other methods or you can create a variable outside of the methods to pass information
+#Method structure and uses was solidified working with hashes is still confusing.
