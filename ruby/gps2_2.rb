@@ -64,12 +64,26 @@ end
 
 def print_list(list)
 
-  p list
+  puts "Grocery List:"
+  list.each_pair {|key, value| puts "#{key}, qty:#{value}"}
 
 end
 
 
 
-p create_list("")
-add_item("Lemonade",  Tomatoes Onions, Ice Cream)
+list = create_list("")
+add_item("Lemonade", list, 2)
+add_item("Tomatoes", list, 3)
+add_item("Onions", list)
+add_item("Ice Cream", list, 4)
+remove_item("Lemonade", list)
+update_item("Ice Cream", 1, list)
+print_list(list)
+
+#
+#
+#
+#
+#
+#
 
