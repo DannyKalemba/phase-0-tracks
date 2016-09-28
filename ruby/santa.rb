@@ -7,7 +7,7 @@ class Santa
     @gender = gender
     @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    @age = Random.new.rand(140)
   end
 
   def speak
@@ -28,19 +28,33 @@ class Santa
   end
 end
 
-santas = []
+# test code
+# santas = []
 
-genders = ["female", "male", "N/A"]
-ethnicities = ["white", "black", "N/A"]
-genders.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i])
+# genders = ["female", "male", "N/A"]
+# ethnicities = ["white", "black", "N/A"]
+# genders.length.times do |i|
+#   santas << Santa.new(genders[i], ethnicities[i])
+# end
+
+# puts santas[1].celebrate_birthday
+# puts santas[2].get_mad_at("Vixen")
+# puts santas[0].gender = "bigender"
+# puts santas[1].age
+# puts santas[0].ethnicity
+
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+(0..100).each do |i|
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
 end
 
-puts santas[1].celebrate_birthday
-puts santas[2].get_mad_at("Vixen")
-puts santas[0].gender = "bigender"
-puts santas[1].age
-puts santas[0].ethnicity
+santas.length.times do |i|
+  puts "Santa's age: #{santas[i].age}"
+  puts "Santa's gender: #{santas[i].gender}"
+  puts "Santa's ethnicity: #{santas[i].ethnicity}"
+end
 
 
 
