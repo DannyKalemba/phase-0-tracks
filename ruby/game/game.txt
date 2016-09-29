@@ -1,0 +1,10 @@
+-Word guessing game
+-guess game class
+-limit number of guess
+-repeated guesses do not count
+-reveal letter
+-driver code for input and output
+-input word
+-guess letter
+-taunting message
+-congratulatory message
