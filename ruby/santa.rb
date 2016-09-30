@@ -1,4 +1,4 @@
-class Santa
+  class Santa
   attr_reader :age, :ethnicity
   attr_accessor :gender
 
@@ -43,18 +43,16 @@ end
 # puts santas[1].age
 # puts santas[0].ethnicity
 
-santas = []
+
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-(0..100).each do |i|
-  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+(0..100).each do 
+  santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+  puts "Santa's age: #{santa.age}"
+  puts "Santa's gender: #{santa.gender}"
+  puts "Santa's ethnicity: #{santa.ethnicity}"
 end
 
-santas.length.times do |i|
-  puts "Santa's age: #{santas[i].age}"
-  puts "Santa's gender: #{santas[i].gender}"
-  puts "Santa's ethnicity: #{santas[i].ethnicity}"
-end
 
 
 
