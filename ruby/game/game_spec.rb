@@ -1,10 +1,4 @@
-# -Our word guessing game should ...
-# -limit number of guesses based on length of word
-# -return if letter guessed is in word
-# -reveal letter
-# -input word
-# -return taunting message
-# -return congratulatory message
+
 
 require_relative 'game'
 
@@ -16,7 +10,7 @@ describe Game do
   end
 
   it "return total number of guesses" do 
-    expect(game.return_total_guess('unicorn')).to eq 5
+    expect(game.total_guesses).to eq 7
   end
 
   it "return true if letter guessed is in the word" do
@@ -26,7 +20,4 @@ describe Game do
   it "return true if letter was already guessed" do
     expect(game.repeated_guess('u',['u','_'])).to eq true
   end
-
-  
-
 end
