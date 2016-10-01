@@ -9,32 +9,24 @@
 # -return congratulatory message
 
 class Game
-  attr_reader :guess_count, :total_guesses
-  attr_accessor :word, :blank_array
+  attr_reader :guess_count, :total_guesses, :word
+  attr_accessor :blank_array, :guessed_letters
 
   def initialize(string)
     @word = string.chars
     @guess_count = 0 
     @total_guesses = string.length 
     @blank_array = Array.new(string.length) {'_'}
+    @guessed_letters = []
   end
 
   def check_letter(letter)
-    if @word.include?(letter) && !repeated_guess(letter,@blank_array)
-      all_matches(letter)
-      @blank_array[all_matches(letter).each] = letter
-      @guess_count += 1
-      true
-    else
+    if @guessed_letters.include?(letter)
       false
-    end    
-  end
-
-  def repeated_guess(letter, arr)
-    if arr.include?(letter)
-      true
     else
-      false
+      @guessed_letters << letter
+      @guess_count -= 1
+      true
     end
   end
 
@@ -46,14 +38,31 @@ class Game
     arr = @word.each_index.select {|i| @word[i] == letter}
     arr
   end
+
+  def add_letters(letter, arr)
+    arr.each do |i|
+      @blank_array.delete_at(i) 
+      @blank_array.insert(i, letter)
+    end
+    @blank_array
+  end
+
+  def word_guessed
+    if @blank_array = @word
+      false
+    else
+      true      
+    end
+  end
+
 end
 
 #output
 
 puts "Input a word to be guessed:"
-input = gets.chomp
+input = gets.chomp.downcase
 game = Game.new(input)
-while game.total_guesses > 0
+while game.total_guesses > 0 && game.word_guessed
   puts "Enter a letter you would like to guess:"
   game.blank_array.each do |i|
     print i
@@ -65,5 +74,6 @@ while game.total_guesses > 0
     puts "Letter has already been guessed"
   end
 end
+
 
 
