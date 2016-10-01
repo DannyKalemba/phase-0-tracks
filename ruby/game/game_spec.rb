@@ -17,8 +17,9 @@ describe Game do
     expect(game.check_letter('u')).to eq true
   end
 
-  it "return the index of the guessed letter" do
-    expect(game.letter_index('u')).to eq 0
+  it "return current guess count" do 
+    expect(game.current_guesses).to eq 8
+    
   end
 
   it "return an array of indexes where the letter is found in the word" do

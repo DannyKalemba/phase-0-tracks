@@ -2,15 +2,16 @@
 # -create an array of the letters
 # -limit number of guesses based on length of word
 # -return true if letter guessed is in word
-#   -check if more letters match guessed letter
+#   -Fill in blank array if letter guessed is in the word
 # -reveal letter
-# -input word
-# -return taunting message
-# -return congratulatory message
+# -driver code
+#   -input word
+#   -guess letter
+#   -return taunting message
+#   -return congratulatory message
 
 class Game
-  attr_reader :guess_count, :total_guesses, :word
-  attr_accessor :blank_array, :guessed_letters
+  attr_reader :guess_count, :total_guesses, :word, :blank_array, :guessed_letters
 
   def initialize(string)
     @word = string.chars
@@ -25,13 +26,13 @@ class Game
       false
     else
       @guessed_letters << letter
-      @guess_count -= 1
+      @guess_count += 1
       true
     end
   end
 
-  def letter_index(letter)
-    @word.index(letter) 
+  def current_guesses
+    @total_guesses - @guess_count
   end
 
   def all_matches(letter)
@@ -48,32 +49,39 @@ class Game
   end
 
   def word_guessed
-    if @blank_array = @word
-      false
+    if @blank_array == @word
+      true
     else
-      true      
+      false      
     end
   end
-
 end
 
 #output
 
-puts "Input a word to be guessed:"
-input = gets.chomp.downcase
+puts "Player 1 input a word to be guessed:"
+input = gets.chomp.downcase 
 game = Game.new(input)
-while game.total_guesses > 0 && game.word_guessed
-  puts "Enter a letter you would like to guess:"
+system('cls')
+while game.current_guesses > 0 && !game.word_guessed
+  puts "Player 2 Enter a letter you would like to guess you have #{game.current_guesses} guesses left:"
   game.blank_array.each do |i|
     print i
   end
-  letter = gets.chomp
+  letter = gets.chomp.downcase
   if  game.check_letter(letter)
-    game.blank_array[game.letter_index(letter)] = letter
+    game.add_letters(letter, game.all_matches(letter))
   elsif 
     puts "Letter has already been guessed"
   end
 end
+
+if game.word_guessed 
+  puts "Congratulations the word was #{game.word.join}"
+else
+  puts "You lose, is that the best you can do?"
+end
+
 
 
 
