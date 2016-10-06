@@ -8,11 +8,16 @@
 function reverse(word){
   var wordArray = word.split("");
   var wordReversed = [];
-  for(var i = 0; i < word.length; i--){
+  for(var i = 0; i < word.length; i++){
     wordReversed.unshift(wordArray[i]);
   }
-  wordReversed.toString();
-  return wordReversed;
+  return wordReversed.join("");
 }
 
 console.log(reverse("hello"));
+
+var wordBackwards = reverse("bootcamp");
+
+if (10 == 10){
+  console.log(wordBackwards);
+}
