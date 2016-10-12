@@ -1,2 +1,43 @@
-species 
-brookfield
+1. SELECT * FROM zoo;
+1|Lion|2|true|1
+2|Alligator|4|false|3
+3|Turtle|9|false|3
+4|Vulture|5|false|2
+5|Blue Jay|8|true|2
+6|Gecko|4|true|3
+7|Zebra|2|true|1
+
+2.UPDATE zoo SET count=3 WHERE animal="Lion";
+
+3.SELECT * FROM zoo, species WHERE zoo.species_id = species.id;
+1|Lion|3|true|1|1|Mammal
+2|Alligator|4|false|3|3|Reptile
+3|Turtle|9|false|3|3|Reptile
+4|Vulture|5|false|2|2|Bird
+5|Blue Jay|8|true|2|2|Bird
+6|Gecko|4|true|3|3|Reptile
+7|Zebra|2|true|1|1|Mammal
+
+4. SELECT zoo.animal, zoo.count, species.type FROM zoo JOIN species ON zoo.species_id = species.id;
+Lion|3|Mammal
+Alligator|4|Reptile
+Turtle|9|Reptile
+Vulture|5|Bird
+Blue Jay|8|Bird
+Gecko|4|Reptile
+Zebra|2|Mammal
+
+5. DELETE FROM zoo WHERE animal="Alligator";
+
+6.   SELECT * FROM zoo LEFT JOIN species ON zoo.count = species.id;
+1|Lion|3|true|1|3|Reptile
+3|Turtle|9|false|3||
+4|Vulture|5|false|2||
+5|Blue Jay|8|true|2||
+6|Gecko|4|true|3||
+7|Zebra|2|true|1|2|Bird
+
+
+ SELECT * FROM zoo INNER JOIN species ON zoo.count = species.id;
+1|Lion|3|true|1|3|Reptile
+7|Zebra|2|true|1|2|Bird
