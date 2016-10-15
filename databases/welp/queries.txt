@@ -1,0 +1,12 @@
+2. SELECT * FROM users, reviews, businesses WHERE business_id = businesses.id AND user_id = users.id;
+1|Bradford|Pitt|1|5|great food!|1|1|1|Grundy Hollow Wedding Chapel
+2|Mandy|Kaling|2|2|ok food!|2|2|2|Amir's Towing
+3|Angela|Jolie|3|1|terrible food!|3|3|3|The Beagle Nightclub
+
+3.SELECT users.First, users.Last, businesses.Name, reviews.stars, reviews.Comment FROM users, reviews, businesses WHERE business_id = businesses.id AND user_id = users.id;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|great food!
+Mandy|Kaling|Amir's Towing|2|ok food!
+Angela|Jolie|The Beagle Nightclub|1|terrible food!
+
+4. SELECT * FROM users, reviews, businesses WHERE business_id = businesses.id AND user_id = users.id AND businesses.Name = "Amir's Towing";
+2|Mandy|Kaling|2|2|ok food!|2|2|2|Amir's Towing
