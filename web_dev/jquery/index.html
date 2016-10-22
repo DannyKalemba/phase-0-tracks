@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Big Lebowski</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("p").click(function(){
+        $(this).hide();
+    });
+  });
+  $(document).ready(function(){
+    $("h1").dblclick(function(){
+      $(this).hide();
+    });
+  });
+  $(document).ready(function(){
+    $("h4").hover(function(){
+      $(this).hide();
+    });
+  });
+  </script>
+
+</head>
+<body id="homepage">
+  <main>
+    <header>
+      <h1>Big Lebowski Fan Website</h1>
+      <h4>Welcome to the home of the dude.</h4>
+    </header>
+    <img src="http://images.amazon.com/images/P/B00007ELEL.01.LZZZZZZZ.jpg" alt="Big Lebowski Cover">
+    <section id="cast">
+      <h2 class="links">Cast</h2>
+      <ul>
+        <li>Jeff Bridges </li>
+        <li>John Goodman</li>
+        <li>Julianne Moore</li>
+        <li>Steve Buscemi</li>
+        <li>John Turturro</li> 
+        <li>And more</li>   
+      </ul>
+    </section>
+    <div class="director">
+      <table>
+        <tr>
+          <th>Directed by</th>
+          <th>Joel Coen</th>
+        </tr>
+        <tr> 
+          <th>Produced by</th>
+          <th>Ethan Coen</th>
+        </tr>    
+        <tr>
+          <th>Written by</th>
+          <th>Ethan and Joel Coen</th>
+        </tr>
+        <tr>
+          <th>Music by</th>
+          <th>Carter Burwell</th>
+        </tr>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <a href="https://lebowskifest.com/"><h3 class ="links">Lebowski Fest</h3></a>
+    <p>Lebowski Fest is a good website because it is able to divide many of the different sections of the web page to make it easy to navigate. The website has images of products they offer on the main page making it appealing to the eye. The overall format of the website makes it easy to look at and navigate. In the source code you can see that many of the different sections have the div tag that have a class and are styled with CSS. </p>
+  
+    <nav class="links">
+      <a href="contact.html">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>
