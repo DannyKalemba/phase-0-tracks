@@ -1,5 +1,6 @@
 # require gems
 require 'sinatra'
+require 'sinatra/reloader'
 require 'sqlite3'
 
 db = SQLite3::Database.new("students.db")
@@ -12,6 +13,15 @@ get '/' do
   "#{params[:name]} is #{params[:age]} years old."
 end
 
+get '/great_job' do
+  if params[:name] == nil
+    "Good job!"
+  else
+    "Good job #{params[:name]}!"
+  end
+end
+
+
 # write a GET route with
 # route parameters
 get '/about/:person' do
@@ -22,6 +32,16 @@ end
 get '/:person_1/loves/:person_2' do
   "#{params[:person_1]} loves #{params[:person_2]}"
 end
+
+get '/contact/:address/:address_second_line' do
+    "#{params[:address]}<br>\n#{params[:address_second_line]}<br>"
+end
+
+get '/add/:num1/:num2' do
+   answer = params[:num1].to_i + params[:num2].to_i
+   "The answer is #{answer}."
+end
+
 
 # write a GET route that retrieves
 # all student data
