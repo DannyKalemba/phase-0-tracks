@@ -34,7 +34,7 @@ get '/:person_1/loves/:person_2' do
 end
 
 get '/contact/:address/:address_second_line' do
-    "#{params[:address]}<br>\n#{params[:address_second_line]}<br>"
+    "#{params[:address]}<br>#{params[:address_second_line]}<br>"
 end
 
 get '/add/:num1/:num2' do
